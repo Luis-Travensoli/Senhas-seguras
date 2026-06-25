@@ -4,51 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador de senha</title>
+    <title>Gerador de Senha</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <section class="conteudo">
+    <main class="conteudo">
 
-        <div class="conteudo-titulo">
-            <img src="unlock.svg" alt="Cadeado fechado">
-            <h2 class="titulo-principal">Gerador de senhas</h2>
-            <h3 class="titulo-secundario">
+        <header class="conteudo-titulo">
+            <img src="unlock.svg" alt="Cadeado aberto">
+            <h1 class="titulo-principal">Gerador de senhas</h1>
+            <p class="titulo-secundario">
                 Gere instantaneamente uma senha aleatória e segura
-            </h3>
-        </div>
+            </p>
+        </header>
 
-        <div class="conteudo-senha">
-            <label for="campo-senha">Senha</label>
-            <input type="text" name="senha" id="campo-senha">
-        </div>
+        <form class="parametro" onsubmit="event.preventDefault();">
 
-        <div class="parametro">
+            <div class="conteudo-senha">
+                <label for="campo-senha">Senha Gerada</label>
+                <input type="text" name="senha" id="campo-senha" readonly placeholder="Sua senha aparecerá aqui">
+            </div>
 
-            <h3 class="parametro-titulo">Personalize sua senha</h3>
+            <h2 class="parametro-titulo">Personalize sua senha</h2>
 
             <div class="parametro-coluna__senha">
 
-                <!-- Número de caracteres -->
-                <div class="parametro-senha">
-                    <h4 class="parametro-senha__titulo">
+                <section class="parametro-senha">
+                    <h3 class="parametro-senha__titulo">
                         Número de caracteres
-                    </h4>
+                    </h3>
 
                     <div class="parametro-senha-botoes">
-                        <button class="parametro-senha__botao">-</button>
-                        <p class="parametro-senha__texto">12</p>
-                        <button class="parametro-senha__botao">+</button>
+                        <button type="button" class="parametro-senha__botao" aria-label="Diminuir tamanho">-</button>
+                        <p class="parametro-senha__texto" id="tamanho-senha">12</p>
+                        <button type="button" class="parametro-senha__botao" aria-label="Aumentar tamanho">+</button>
                     </div>
-                </div>
+                </section>
 
-                <!-- Características -->
-                <div class="parametro-senha">
+                <fieldset class="parametro-senha">
 
-                    <h4 class="parametro-senha__titulo">
+                    <legend class="parametro-senha__titulo">
                         Características da senha
-                    </h4>
+                    </legend>
 
                     <div class="parametro-senha-checkbox">
                         <input id="maiusculo" name="maiusculo" type="checkbox" class="checkbox" checked>
@@ -70,16 +68,15 @@
                         <label for="simbolo">Símbolos</label>
                     </div>
 
-                </div>
+                </fieldset>
 
-                <!-- Força da senha -->
-                <div class="parametro-senha">
+                <section class="parametro-senha">
 
-                    <h4 class="parametro-senha__titulo">
+                    <h3 class="parametro-senha__titulo">
                         Força da senha
-                    </h4>
+                    </h3>
 
-                    <div class="forca">
+                    <div class="forca" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
                         <div class="fraca"></div>
                     </div>
 
@@ -89,13 +86,13 @@
                         <p>Forte</p>
                     </div>
 
-                </div>
+                </section>
 
             </div>
 
-        </div>
+        </form>
 
-    </section>
+    </main>
 </body>
 
 </html>
