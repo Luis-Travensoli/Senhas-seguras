@@ -176,7 +176,3 @@ body {
         width: 48%;
     }
 }
-O que foi corrigido:
-Adicionado box-sizing: border-box.
-
-Removidos blocos CSS vazios:
